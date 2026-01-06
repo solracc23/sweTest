@@ -1,0 +1,44 @@
+name: OWASP Dependency-Check
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  dependency-check:
+    name: Run OWASP Dependency-Check
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install Java (required for Dependency-Check)
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+
+      - name: Download Dependency-Check
+        run: |
+          curl -L -o dc.zip https://github.com/jeremylong/DependencyCheck/releases/download/v8.4.0/dependency-check-8.4.0-release.zip
+          unzip dc.zip -d dependency-check
+          rm dc.zip
+
+      - name: Run Dependency-Check scan
+        run: |
+          ./dependency-check/dependency-check/bin/dependency-check.sh \
+            --project "${{ github.repository }}" \
+            --scan . \
+            --format "HTML" \
+            --out dependency-check-report \
+            --failOnCVSS 7.0
+
+      - name: Upload report artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: dependency-check-report
+          path: dependency-check-report/
