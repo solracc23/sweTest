@@ -14,7 +14,7 @@ jobs:
       - name: Run OWASP Dependency-Check
         uses: dependency-check/Dependency-Check_Action@main
         with:
-          project: 'gruppe-4a-1'
+          project: 'gruppe-4a-1/**/*'
           path: './gruppe-4a-1'
           format: 'HTML'
           out: 'reports'
