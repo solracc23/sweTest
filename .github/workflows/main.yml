@@ -1,28 +1,26 @@
+name: OWASP Dependency Check
 
-on: [push]
+on:
+  push:
+    branches: ["main"]
 
 jobs:
-  depchecktest:
+  dependency-check:
     runs-on: ubuntu-latest
-    name: depecheck_test
+
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Build project with Maven
-        run: mvn clean install
-      - name: Depcheck
+      - uses: actions/checkout@v4
+
+      - name: Run OWASP Dependency-Check
         uses: dependency-check/Dependency-Check_Action@main
-        id: Depcheck
         with:
-          project: 'test'
-          path: '.'
+          project: 'gruppe-4a-1'
+          path: './gruppe-4a-1'
           format: 'HTML'
-          out: 'reports' # this is the default, no need to specify unless you wish to override it
-          args: >
-            --failOnCVSS 7
-            --enableRetired
-      - name: Upload Test results
-        uses: actions/upload-artifact@master
+          out: 'reports'
+
+      - name: Upload report
+        uses: actions/upload-artifact@v4
         with:
-           name: Depcheck report
-           path: ${{github.workspace}}/reports
+          name: dependency-check-report
+          path: reports
