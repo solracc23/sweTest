@@ -1,41 +1,28 @@
-name: Dependency-Check (no API key)
 
-on:
-  push:
-    branches: [ main ]
-  pull_request:
+on: [push]
 
 jobs:
-  dep-check:
+  depchecktest:
     runs-on: ubuntu-latest
-
+    name: depecheck_test
     steps:
-      - name: Checkout code
+      - name: Checkout
         uses: actions/checkout@v4
-
-      - name: Set up Java
-        uses: actions/setup-java@v3
+      - name: Build project with Maven
+        run: mvn clean install
+      - name: Depcheck
+        uses: dependency-check/Dependency-Check_Action@main
+        id: Depcheck
         with:
-          distribution: temurin
-          java-version: 17
-
-      - name: Download OWASP Dependency-Check
-        run: |
-          curl -L -o dc.zip https://github.com/jeremylong/DependencyCheck/releases/download/v8.4.0/dependency-check-8.4.0-release.zip
-          unzip dc.zip -d dependency-check
-          rm dc.zip
-          chmod +x dependency-check/dependency-check.sh
-
-      - name: Run Dependency-Check (no API key)
-        run: |
-          ./dependency-check/dependency-check.sh \
-            --project "MyProject" \
-            --scan . \
-            --format "HTML" \
-            --out dependency-check-report
-
-      - name: Upload report
-        uses: actions/upload-artifact@v4
+          project: 'test'
+          path: '.'
+          format: 'HTML'
+          out: 'reports' # this is the default, no need to specify unless you wish to override it
+          args: >
+            --failOnCVSS 7
+            --enableRetired
+      - name: Upload Test results
+        uses: actions/upload-artifact@master
         with:
-          name: dependency-check-report
-          path: dependency-check-report/
+           name: Depcheck report
+           path: ${{github.workspace}}/reports
