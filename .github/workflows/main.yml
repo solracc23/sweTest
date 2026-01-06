@@ -1,4 +1,4 @@
-name: OWASP Dependency-Check
+name: Dependency-Check (no API key)
 
 on:
   push:
@@ -6,11 +6,11 @@ on:
   pull_request:
 
 jobs:
-  dependency-check:
+  dep-check:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Repository
+      - name: Checkout code
         uses: actions/checkout@v4
 
       - name: Set up Java
@@ -19,26 +19,23 @@ jobs:
           distribution: temurin
           java-version: 17
 
-      - name: Download Dependency-Check
+      - name: Download OWASP Dependency-Check
         run: |
           curl -L -o dc.zip https://github.com/jeremylong/DependencyCheck/releases/download/v8.4.0/dependency-check-8.4.0-release.zip
-          unzip dc.zip -d dependency-check-folder
+          unzip dc.zip -d dependency-check
           rm dc.zip
-          ls dependency-check-folder
-          chmod +x dependency-check-folder/dependency-check/bin/dependency-check.sh
+          chmod +x dependency-check/dependency-check.sh
 
-      - name: Run Dependency-Check
+      - name: Run Dependency-Check (no API key)
         run: |
-          dependency-check-folder/dependency-check/bin/dependency-check.sh \
-            --project "${{ github.repository }}" \
+          ./dependency-check/dependency-check.sh \
+            --project "MyProject" \
             --scan . \
             --format "HTML" \
-            --out dependency-check-report \
-            ${{ secrets.NVD_API_KEY && format('--nvdApiKey {0}', secrets.NVD_API_KEY) || '--noupdate' }}
+            --out dependency-check-report
 
-      - name: Upload HTML Report
+      - name: Upload report
         uses: actions/upload-artifact@v4
         with:
           name: dependency-check-report
           path: dependency-check-report/
-
