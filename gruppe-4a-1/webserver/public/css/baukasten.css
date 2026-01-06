@@ -1,0 +1,415 @@
+/* Baukasten - Aufgaben-Editor für Mathe 5. Klasse */
+* {
+    font-size: var(--font-size);
+}
+.baukasten-container {
+    width: 100%;
+    max-width: 900px;
+    padding: 20px;
+}
+
+.baukasten-header {
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.baukasten-header h1 {
+    color: #236c93;
+    font-size: 2rem;
+    margin-bottom: 10px;
+    border-bottom: none;
+}
+
+.baukasten-header .subtitle {
+    color: var(--text-color);
+    font-size: 1rem;
+}
+
+/* Editor-Bereich */
+.task-editor {
+    /* background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); */
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 4px 20px rgba(35, 108, 147, 0.1);
+    border: 2px solid #e2e8f0;
+}
+
+.editor-section {
+    margin-bottom: 25px;
+}
+
+.editor-section label {
+    display: block;
+    font-weight: 600;
+    color: #236c93;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+.editor-section .hint {
+    color: #888;
+    font-size: 0.85rem;
+    margin-bottom: 10px;
+    font-style: italic;
+}
+
+.optional-badge {
+    font-weight: 400;
+    font-size: 0.85rem;
+    color: var(--text-color);
+}
+
+/* Eingabefeld */
+.expression-input {
+    width: 100%;
+    padding: 15px 20px;
+    font-size: 1.5rem;
+    font-family: Verdana, sans-serif;
+    border: 2px solid #cbd5e1;
+    border-radius: 12px;
+    background: var(--surface-color);
+    color: var(--text-color);
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+.expression-input:focus {
+    outline: none;
+    border-color: #236c93;
+    box-shadow: 0 0 0 4px rgba(35, 108, 147, 0.15);
+}
+
+.expression-input::placeholder {
+    color: #94a3b8;
+}
+
+/* Beschreibungs-Eingabefeld */
+.description-input {
+    width: 100%;
+    padding: 12px 16px;
+    font-size: 1rem;
+    border: 2px solid #cbd5e1;
+    border-radius: 12px;
+    background: var(--surface-color);
+    color: var(--text-color);
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+.description-input:focus {
+    outline: none;
+    border-color: var(--text-color);
+    box-shadow: 0 0 0 4px rgba(35, 108, 147, 0.15);
+}
+
+.description-input::placeholder {
+    color: #94a3b8;
+}
+
+/* Wochen-Eingabefeld */
+.week-input {
+    width: 120px;
+    padding: 12px 16px;
+    font-size: 1.2rem;
+    font-family: Verdana, sans-serif;
+    border: 2px solid #cbd5e1;
+    border-radius: 12px;
+    background: var(--surface-color);
+    color: var(--text-color);
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.week-input:focus {
+    outline: none;
+    border-color: #236c93;
+    box-shadow: 0 0 0 4px rgba(35, 108, 147, 0.15);
+}
+
+.week-input::-webkit-inner-spin-button,
+.week-input::-webkit-outer-spin-button {
+    opacity: 1;
+    height: 30px;
+}
+
+/* Kategorie-Auswahl */
+.category-select {
+    width: 100%;
+    max-width: 300px;
+    padding: 12px 16px;
+    font-size: 1rem;
+    font-family: inherit;
+    border: 2px solid #cbd5e1;
+    border-radius: 12px;
+    background: var(--surface-color);
+    color: var(--text-color);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23475569' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    padding-right: 40px;
+}
+
+.category-select:focus {
+    outline: none;
+    border-color: #236c93;
+    box-shadow: 0 0 0 4px rgba(35, 108, 147, 0.15);
+}
+
+.category-select option {
+    padding: 10px;
+}
+
+/* Token-Anzeige */
+.token-display {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 20px;
+    background: var(--surface-color);
+    border-radius: 12px;
+    min-height: 70px;
+    border: 2px dashed #cbd5e1;
+    align-items: center;
+    justify-content: center;
+}
+
+.token-display.empty {
+    color: #94a3b8;
+    font-style: italic;
+}
+
+.token {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 20px;
+    background: linear-gradient(135deg, #236c93 0%, #2d8bb9 100%);
+    color: white;
+    border-radius: 10px;
+    font-size: 1.4rem;
+    font-family: Verdana, sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    box-shadow: 0 3px 10px rgba(35, 108, 147, 0.3);
+    user-select: none;
+    min-width: 50px;
+}
+
+.token:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(35, 108, 147, 0.4);
+}
+
+.token.selected {
+    background: linear-gradient(135deg, #dc2626 0%, #ef4444 100%);
+    box-shadow: 0 3px 15px rgba(220, 38, 38, 0.4);
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+.token.operator {
+    background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+    box-shadow: 0 3px 10px rgba(5, 150, 105, 0.3);
+}
+
+.token.operator:hover {
+    box-shadow: 0 5px 15px rgba(5, 150, 105, 0.4);
+}
+
+.token.operator.selected {
+    background: linear-gradient(135deg, #dc2626 0%, #ef4444 100%);
+}
+
+/* Vorschau */
+.preview-section {
+    background: #1e293b;
+    border-radius: 12px;
+    padding: 25px;
+    text-align: center;
+}
+
+.preview-section h3 {
+    color: white;
+    margin: 0 0 15px 0;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.preview-expression {
+    font-size: 2rem;
+    font-family: Verdana, sans-serif;
+    color: var(--text-color);
+    padding: 15px;
+    background: var(--surface-color);
+    border-radius: 8px;
+    letter-spacing: 3px;
+}
+
+.preview-expression .gap {
+    color: #fbbf24;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+/* Buttons */
+.button-group {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 25px;
+}
+
+.btn {
+    padding: 14px 35px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #236c93 0%, #2d8bb9 100%);
+    color: white;
+    box-shadow: 0 4px 15px rgba(35, 108, 147, 0.3);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(35, 108, 147, 0.4);
+}
+
+.btn-primary:disabled {
+    background: #94a3b8;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.btn-secondary {
+    background: var(--surface-color);
+    color: var(--text-color);
+}
+
+.btn-secondary:hover {
+    background: #cbd5e1;
+}
+
+/* Ergebnis-Bereich */
+.result-section {
+    margin-top: 30px;
+    display: none;
+}
+
+.result-section.visible {
+    display: block;
+    animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.result-card {
+    background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+    border-radius: 12px;
+    padding: 25px;
+    color: white;
+}
+
+.result-card h3 {
+    margin: 0 0 15px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.result-card .checkmark {
+    font-size: 1.5rem;
+}
+
+.task-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.task-info-item {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 12px 15px;
+    border-radius: 8px;
+}
+
+.task-info-item .label {
+    font-size: 0.8rem;
+    opacity: 0.8;
+    margin-bottom: 5px;
+}
+
+.task-info-item .value {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+/* Responsiv */
+@media (max-width: 600px) {
+    .baukasten-header h1{
+        margin: 0;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        padding: 0 10px;
+
+    }
+    .task-editor {
+        padding: 20px;
+    }
+
+    .expression-input {
+        font-size: 1.2rem;
+        padding: 12px 15px;
+    }
+
+    .token {
+        padding: 10px 15px;
+        font-size: 1.2rem;
+    }
+
+    .preview-expression {
+        font-size: 1.5rem;
+    }
+
+    .button-group {
+        flex-direction: column;
+    }
+
+    .btn {
+        width: 100%;
+        justify-content: center;
+    }
+}

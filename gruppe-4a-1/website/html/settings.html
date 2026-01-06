@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Einstellungen</title>
+    <link rel="stylesheet" href="../../webserver/resources/css/settings.css">
+    <link href="https://fonts.googleapis.com/css2?family=Aptos&display=swap" rel="stylesheet">
+</head>
+<body>
+<header class="überschrift"><button class="img-button"><img src = "../images/Logo_A4.png"></button>Einstellungen</header>
+
+<div class="main-container">
+    <!--linkes Menü-->
+    <div id="menu">
+        <div class="menu-item active" data-content="profil">Profil & Konto</div>
+        <div class="menu-item" data-content="darstellung">Darstellung & Barrierefreiheit</div>
+        <div class="menu-item" data-content="fortschritt">Lernfortschritt & Datenschutz</div>
+        <div class="menu-item" data-content="system">System / Sprache</div>
+        <div class="menu-item" data-content="admin">Administrator-Bereich</div>
+        <div class="menu-item" data-content="lehrer">Lehrer-Bereich</div>
+    </div>
+
+    <!--rechter Inhalt-->
+    <div id="content"></div>
+</div>
+
+<!--Menüpunkte-->
+<template id="profil-template">
+    <ul>
+        <li>Profilbild hochladen</li>
+        <li>Passwort ändern</li>
+        <li>E-Mail-Adresse aktualisieren</li>
+    </ul>
+</template>
+
+<template id="darstellung-template">
+    <p>Hintergrundfarbe auswählen:</p>
+    <select>
+        <option>Hell</option>
+        <option>Dunkel</option>
+        <option>Systemstandard</option>
+    </select>
+</template>
+
+<template id="fortschritt-template">
+    <p>Hier siehst du deinen Lernfortschritt:</p>
+    <progress value="30" max="100"></progress>
+</template>
+
+<template id="system-template">
+    <p>Sprache auswählen:</p>
+    <select>
+        <option>Deutsch</option>
+        <option>English</option>
+        <option>Français</option>
+    </select>
+    <p>Zeitzone einstellen:</p>
+    <select>
+        <option>UTC+1</option>
+        <option>UTC+2</option>
+    </select>
+</template>
+
+<template id="admin-template">
+    <p>Admin-Einstellungen:</p>
+    <ul>
+        <li>Benutzer verwalten</li>
+        <li>Rollen zuweisen</li>
+    </ul>
+</template>
+
+<template id="lehrer-template">
+    <p>Lehrer-Einstellungen:</p>
+    <ul>
+        <li>Kurse verwalten</li>
+        <li>Noten eintragen</li>
+    </ul>
+</template>
+
+<!--Interaktion-->
+<script src="settings.js"></script>
+
+
+<footer class="footer">Footer Einfügen[Noch offen für evtl Universellen]</footer>
+</body>
+</html>

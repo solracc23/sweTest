@@ -1,0 +1,381 @@
+* {
+    font-size: var(--font-size);
+}
+.thema-aufgaben {
+    width: 100%;
+}
+
+.themen {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.thema {
+    display: flex;
+    border-radius: 15px;
+    background: #236c93;
+    color: white;
+    padding: 8px;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.thema:hover {
+    background: var(--hover-color);
+}
+
+.aufgabe {
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    background-color: #236c93;
+    padding: 15px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+.thema-with-aufgabe {
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px;
+}
+
+.pdf {
+    width: 80%;
+    aspect-ratio: 1/1;
+}
+
+.download {
+    background: #657A86;
+    color: white;
+    display: flex;
+    align-items: center;
+    padding: 8px 28px;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.download:hover {
+    background: #BED4DF;
+}
+
+/* Kategorie-Beschreibung */
+.kategorie-beschreibung {
+    color: white;
+    font-size: 15px;
+    margin: 0 0 10px 0;
+    padding: 10px 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    border-left: 3px solid rgba(255, 255, 255, 0.5);
+    width: 100%;
+    box-sizing: border-box;
+    white-space: pre-line;
+}
+
+
+/* Mathe-Aufgaben Styling */
+.mathe-aufgaben {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    padding: 15px;
+}
+
+.mathe-aufgabe {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--surface-color);
+    padding: 12px 15px;
+    border-radius: 10px;
+    transition: background-color 0.3s;
+}
+
+.aufgabe-expression {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-width: 0;
+}
+
+.aufgabe-text {
+    display: block;
+    font-size: var(--font-size);
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+.aufgabe-input {
+    width: 60px;
+    padding: 8px 10px;
+    border: 2px solid #236c93;
+    border-radius: 8px;
+    font-size: 16px;
+    text-align: center;
+}
+
+.aufgabe-input:focus {
+    outline: none;
+    border-color: #1a5370;
+}
+
+.aufgabe-check {
+    background: #236c93;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.aufgabe-check:hover {
+    background: #1a5370;
+}
+
+.aufgabe-check:disabled {
+    background: #90EE90;
+    cursor: default;
+}
+
+.aufgabe-loesung {
+    background: #657A86;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.2s;
+}
+
+/* Wochenfilter-Info */
+.woche-filter-info {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 15px;
+    margin: 10px 20px 25px 20px;
+    padding: 12px 16px;
+    background: var(--surface-color, #f5f5f5);
+    border-radius: 10px;
+    border-left: 4px solid #236c93;
+}
+
+.woche-filter-info p {
+    margin: 0;
+    color: var(--text-color, #333);
+    font-size: var(--font-size, 14px);
+}
+
+.filter-link {
+    color: #236c93;
+    text-decoration: none;
+    font-size: var(--font-size, 14px);
+    font-weight: 500;
+    padding: 6px 12px;
+    border-radius: 6px;
+    background: rgba(35, 108, 147, 0.1);
+    transition: background-color 0.2s;
+}
+
+.filter-link:hover {
+    background: rgba(35, 108, 147, 0.2);
+}
+
+.top-bar{
+    background: var(--surface-color);
+    padding: 10px;
+    color: var(--text-color);
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5px;
+    gap: 10px;
+}
+.top-bar .search-prev img.icon,
+.top-bar .search-next img.icon {
+    filter: brightness(0) invert(1);
+}
+
+.search-bar {
+    border: 2px solid var(--primary-color);
+    border-radius: 15px;
+    background: var(--primary-color);
+    display: flex;
+    align-items: center;
+}
+
+.search-results{
+    background: white;
+    padding: 6px 8px;
+    justify-content: center;
+    border: none;
+    outline: none;
+    border-radius: 15px;
+
+}
+.search-results:empty {
+    display: none;
+    opacity: 0;
+    visibility: hidden;
+    height: 0;
+    min-height: 0;
+    padding: 0;
+    margin: 0;
+}
+
+.search-btn{
+    background: var(--primary-color);
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+.search-next{
+    margin-right: 8px;
+}
+.top-bar .next-page,
+.top-bar .prev-page{
+    background: white;
+    border-radius: 60px;
+
+}
+.btn{
+
+    border: none;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    background: none;
+
+}
+
+.btn:hover{
+    transform: translateY(-2px);
+}
+
+.page-info{
+    padding: 5px;
+
+}
+
+#pdf-render{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    box-shadow: 0 0 2px var(--shadow);
+}
+
+.error{
+
+}
+
+.canvas-wrapper {
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+}
+.pdf-canvas {
+    display: block;
+    max-width: 100% !important;
+    height: auto !important;
+    border-radius: 8px;
+    image-rendering: crisp-edges;
+}
+
+
+/* Mobile */
+@media (max-width: 768px) {
+    .mathe-aufgaben {
+        padding: 10px !important;
+        gap: 10px;
+    }
+    .mathe-aufgabe {
+        flex-direction: column;
+        padding: 15px 12px !important;
+        gap: 15px;
+    }
+    .aufgabe-expression {
+        flex-direction: row;
+        align-items: center;
+        text-align: center;
+        gap: 10px;
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .aufgabe-input {
+        width: 80px !important;
+        min-width: 80px;
+        padding: 12px !important;
+        order: 2;
+        margin: 10px auto;
+    }
+
+    .aufgabe-check, .aufgabe-loesung {
+        width: 100%;
+        padding: 14px !important;
+        order: 3;
+        margin-top: 5px;
+    }
+    .aufgaben-blätter {
+        padding: 10px;
+    }
+    .top-bar {
+    flex-wrap: wrap;
+
+    }
+    .top-bar > div:last-child {
+        grid-column: 3;
+        justify-self: flex-end;
+    }
+
+
+
+}
+
+@media (max-width: 480px) {
+    .mathe-aufgaben {
+        padding: 8px 5px !important;
+    }
+
+    .mathe-aufgabe {
+        padding: 12px 10px !important;
+    }
+
+
+    .aufgabe-input {
+        width: 70px !important;
+        min-width: 70px;
+        padding: 10px !important;
+    }
+    .aufgabe-check, .aufgabe-loesung {
+        padding: 12px !important;
+        min-width: auto;
+    }
+    .top-bar {
+        flex-wrap: wrap;
+    }
+    .search-bar{
+        flex-wrap: wrap;
+    }
+    .top-bar > div:last-child {
+        grid-column: 3;
+        justify-self: end;
+    }
+
+    .search-results {
+        text-align: center;
+    }
+}

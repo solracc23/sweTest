@@ -1,0 +1,160 @@
+* {
+    font-size: var(--font-size);
+}
+.upload-container {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.upload-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.upload-header h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.upload-header .subtitle {
+    color: #666;
+}
+
+.editor-section {
+    margin-bottom: 1.5rem;
+}
+
+.editor-section label {
+    display: block;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+}
+
+.dropzone {
+    border: 2px dashed #ccc;
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background: #fafafa;
+}
+
+.dropzone:hover,
+.dropzone.dragover {
+    border-color: #4a90d9;
+    background: #f0f7ff;
+}
+
+.dropzone-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    color: #666;
+}
+
+.dropzone-content svg {
+    color: #999;
+}
+
+.dropzone-text {
+    font-size: 1rem;
+}
+
+.browse-link {
+    color: #4a90d9;
+    text-decoration: underline;
+}
+
+.dropzone-hint {
+    font-size: 0.85rem;
+    color: #999;
+}
+
+.file-preview {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: #e8f4e8;
+    border-radius: 8px;
+}
+
+.file-name {
+    font-weight: 500;
+    color: #2d7a2d;
+}
+
+.remove-file {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #999;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.remove-file:hover {
+    color: #e74c3c;
+}
+
+.form-select,
+.form-input {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: white;
+    box-sizing: border-box;
+}
+
+.form-select {
+    cursor: pointer;
+}
+
+.form-select:focus,
+.form-input:focus {
+    outline: none;
+    border-color: #4a90d9;
+    box-shadow: 0 0 0 3px rgba(74, 144, 217, 0.15);
+}
+
+.optional-badge {
+    font-weight: 400;
+    color: #888;
+    font-size: 0.85rem;
+}
+
+.button-group {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.btn {
+    padding: 0.875rem 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-primary {
+    background: #4a90d9;
+    color: white;
+}
+
+.btn-primary:hover:not(:disabled) {
+    background: #3a7bc8;
+}
+
+.btn-primary:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}

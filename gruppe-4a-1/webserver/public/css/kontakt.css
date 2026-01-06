@@ -1,0 +1,48 @@
+* {
+    font-size: var(--font-size);
+}
+.kontakt-body{
+    background-color: var(--surface-color);
+    box-shadow: 0 0 10px #888888 inset;
+    border-radius: 20px;
+    justify-self: center;
+    padding: 50px 50px;
+    color:  var(--text-color);
+}
+
+.ueberschrift{
+    color:  var(--text-color);
+    padding: 5px;
+}
+
+.input_text {
+    display: block;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    height:  30px;
+    width: 97.5%;
+    box-shadow: 0 0 10px #888888 inset;
+    background-color: var(--surface-color);
+    border: none;
+    padding-left: 2%;
+}
+
+.input_absenden {
+    display: block;
+    margin-bottom: 20px;
+    justify-self: center;
+    width: 100%;
+    color: white;
+    border: none;
+    transition: all 0.3s ease;
+}
+.input_absenden:hover{
+    background: #1a5370;
+    transform: translateY(-2px);
+}
+
+.input_other {
+    border-radius: 7px;
+    background-color: #236c93;
+    height: 30px;
+}

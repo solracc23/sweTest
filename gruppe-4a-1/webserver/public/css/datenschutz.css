@@ -1,0 +1,7 @@
+* {
+    font-size: var(--font-size);
+}
+.ueberschrift{
+        color:  var(--text-color);
+        padding: 8px;
+}

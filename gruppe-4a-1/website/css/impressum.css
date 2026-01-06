@@ -1,0 +1,185 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Verdana, sans-serif;
+    background: #236C93;
+    min-height: 100vh;
+}
+
+/* Header mit Titel und Logo */
+header {
+    padding: 30px 40px;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+header .logo-container {
+    width: 80px;
+    height: 80px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+header .logo-container svg {
+    width: 70%;
+    height: 70%;
+}
+
+/* Container */
+.container-top {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding-bottom: 10px;
+}
+
+/* Header Bar */
+.header-bar {
+    background: white;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    margin: 10px  20px;
+}
+
+/* Navigation */
+.main-nav {
+    display: flex;
+    gap: 15px;
+    flex: 1;
+    justify-content: center;
+    padding: 0 30px;
+}
+
+.nav-button {
+    background: #236C93;
+    color: white;
+    padding: 12px 28px;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.nav-button:hover {
+    background: #1a5370;
+}
+
+/* Main Layout */
+main {
+    display: flex;
+    gap: 15px;
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 0 20px 20px;
+}
+
+/* Menu Container - links */
+.menu-container {
+    width: 250px;
+}
+
+/* Menu */
+.menu {
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+}
+
+.menu a {
+    display: block;
+    padding: 15px 20px;
+    text-decoration: none;
+    color: #333;
+    border-radius: 8px;
+    margin-bottom: 8px;
+}
+
+.menu a:hover {
+    background: #f0f0f0;
+}
+
+.menu a.active {
+    background: #236C93;
+    color: white;
+}
+
+/* Content Area - rechts und flexibel */
+.content-area {
+    background: white;
+    border-radius: 15px;
+    min-height: 600px;
+    padding: 40px;
+    flex: 1;
+}
+
+.content-area h1 {
+    color: #236C93;
+    border-bottom: 2px solid #f0f0f0;
+    margin: 20px;
+    padding-top: 20px;
+}
+
+.content-area h2 {
+    color: #236C93;
+    margin: 20px;
+    padding-top: 20px;
+}
+
+.content-area h3{
+    color: #236C93;
+    margin: 20px;
+    padding-top: 10px;
+}
+.content-area div{
+    background: white;
+    padding: 20px;
+    flex: 1;
+}
+
+
+/* Parent Dashboard */
+.parent-dashboard {
+    max-width: 100%;
+}
+
+.welcome-section {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.welcome-section h2 {
+    font-size: 32px;
+    color: #236C93;
+    margin-bottom: 8px;
+}
+
+.subtitle {
+    color: #7EA9BF;
+    font-style: italic;
+    font-size: 16px;
+}
+
+/* Footer */
+footer {
+    background: #F2F6F9;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    font-size: 14px;
+    color: #236C93;
+    max-width: 1600px;
+    margin: 20px 20px 20px;
+}

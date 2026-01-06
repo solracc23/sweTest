@@ -1,0 +1,29 @@
+* {
+    font-size: var(--font-size);
+}
+.aktuelles {
+    background-color: var(--surface-color);
+    border-radius: 8px;
+    padding: 20px;
+    color: var(--text-color);
+}
+
+.news {
+
+    background-color: var(--surface-color);
+    border-radius: 8px;
+    margin-left: 13%;
+    margin-right: 13%;
+    margin-top: 20px;
+}
+
+@media (max-width: 768px){
+
+    .news {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+#text{
+    font: var(--font-size);
+}

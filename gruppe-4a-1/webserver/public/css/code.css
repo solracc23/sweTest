@@ -1,0 +1,93 @@
+* {
+    font-size: var(--font-size);
+}
+form {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--surface-color);
+    box-shadow: 0 0 10px #888888 inset;
+    border-radius: 20px;
+    justify-content: center;
+
+    padding: 24px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.input_text {
+    display: flex;
+    margin-bottom: 2px;
+    border-radius: 10px;
+    height: 30px;
+    box-shadow: 0 0 10px #888888 inset;
+    border: none;
+    background-color: var(--surface-color);
+    padding-left: 5px;
+}
+
+.input_einloggen {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.input_other {
+    border-radius: 7px;
+    background-color: #236c93;
+    border: none;
+    height: 30px;
+}
+
+.input_selection {
+    display: flex;
+    margin-bottom: 2px;
+    border-radius: 10px;
+    height: 25px;
+
+}
+
+.button {
+    margin-top: 20px;
+    background: var(--primary-color);
+    color: white;
+    display: flex;
+    justify-content: center;
+    padding: 8px 15px;
+    font-size: 16px;
+    border-radius: 15px;
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.button:hover {
+    background: #1a5370;
+    transform: translateY(-2px);
+
+}
+
+
+form > div {
+    display: flex;
+    flex-direction: column;
+}
+
+.error {
+    font-size: small;
+    padding-bottom: 6px;
+    color: red;
+}
+
+.link {
+    padding-top: 10px;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    font-size: x-small;
+}
+.link a {
+    color : black;
+}
+.link a:hover{
+    color: var(--primary-color);
+}

@@ -1,0 +1,131 @@
+/**/
+:root {
+    --primary-color: #236c93;
+    --hover-color: #578fac;
+
+}
+
+body {
+    font-family: Verdana, sans-serif;
+    background: var(--primary-color);
+    min-height: 100vh;
+    margin-left: 4%;
+    margin-right: 4%;
+}
+
+/*Navbar*/
+header {
+    padding: 30px 40px;
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.header-bar {
+    background: white;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    margin: 10px 20px;
+}
+
+.main-nav {
+    display: flex;
+    gap: 15px;
+    flex: 1;
+    justify-content: center;
+    padding: 0 30px;
+}
+
+/* Navigation */
+.main-nav {
+    display: flex;
+    gap: 15px;
+    flex: 1;
+    justify-content: center;
+    padding: 0 30px;
+}
+
+.nav-button {
+    background: #236C93;
+    color: white;
+    padding: 12px 28px;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.nav-button:hover {
+    background: #1a5370;
+}
+
+.hamburger_menu div {
+    width: 50px;
+    height: 4px;
+    background-color: black;
+    margin: 10px;
+}
+
+.aktuelles {
+    text-align: center;
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+/*content*/
+.content {
+
+    background-color: white;
+    border-radius: 8px;
+    margin-left: 13%;
+    margin-right: 13%;
+    margin-top: 20px;
+
+}
+
+.content h1 {
+    color: #236C93;
+    border-bottom: 2px solid #f0f0f0;
+    margin: 20px;
+    padding-top: 20px;
+}
+
+/*Footer*/
+
+footer {
+    background: #F2F6F9;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    font-size: 14px;
+    color: #236C93;
+    max-width: 1600px;
+    margin: 500px 20px 20px;
+
+}
+
+footer ul li {
+    padding: 3px 15px;
+    border-right: 1px solid black;
+    display: inline;
+
+}
+
+footer ul li a {
+    text-decoration: none;
+    color: #236C93;
+    font-size: 1rem;
+}
+
+footer ul li:last-child {
+    border-right: none;
+}
+
+footer ul {
+    text-align: center;
+}

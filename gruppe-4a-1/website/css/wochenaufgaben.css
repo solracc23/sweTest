@@ -1,0 +1,210 @@
+:root {
+    --primary-color: #236c93;
+    --hover-color: #578fac;
+}
+
+body {
+    font-family: Verdana, serif;
+
+}
+
+.nav-inner {
+    flex-wrap: wrap;
+    align-items: center;
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.nav-inner > li:not(:last-child){
+    border-radius: 10px;
+    background-color: var(--primary-color);
+}
+
+.nav-inner li a{
+    display: block;
+    padding: 0.5rem 1.5rem;
+    color: white;
+    text-decoration: none;
+}
+
+.nav-inner > li:not(:last-child):hover{
+    border-radius: 10px;
+    background-color: var(--hover-color);
+}
+
+.logo {
+    width: 50px;
+}
+
+.logo-user {
+    width: 30px;
+    border-radius: 15px;
+    border: 1px solid #578fac;
+}
+
+.logo-user:hover {
+    width: 30px;
+}
+
+.navbar {
+
+    border: 1px solid black;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/**Styling Main*/
+
+
+.nav-button {
+    background: #236C93;
+    color: white;
+    padding: 12px 28px;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.nav-button:hover {
+    background: #1a5370;
+}
+.content-area {
+    background: white;
+    border-radius: 15px;
+    min-height: 300px;
+    padding: 40px;
+    flex: 1;
+}
+body {
+    font-family: Verdana, sans-serif;
+    background: #236C93;
+    min-height: 100vh;
+}
+/* Container */
+.container-top {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding-bottom: 10px;
+}
+
+/* Header Bar */
+.header-bar {
+    background: white;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    margin: 10px  20px;
+}
+
+.main-nav {
+    display: flex;
+    gap: 15px;
+    flex: 1;
+    justify-content: center;
+    padding: 0 30px;
+}
+.kategorien {
+    justify-content: center;
+    display: flex;
+    align-items: stretch;
+    gap: 50px;
+}
+
+
+
+
+/**Headings and Pictures**/
+h1 {
+    text-align: center;
+    text-decoration: underline;
+}
+
+
+.category-heading {
+    color: white;
+    display: block;
+    padding: 0.5rem 100px;
+    text-decoration: none;
+}
+
+header .logo-container {
+    width: 80px;
+    height: 80px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+header .logo-container svg {
+    width: 70%;
+    height: 70%;
+}
+.menu {
+    background: white;
+    border-radius: 15px;
+    padding: 20px;
+}
+
+.menu a {
+    display: block;
+    padding: 15px 20px;
+    text-decoration: none;
+    color: #333;
+    border-radius: 8px;
+    margin-bottom: 8px;
+}
+.thema{
+    border:1px solid black;
+    border-radius: 25px;
+    transition: box-shadow 1s;
+    background-color: #236c93;
+}
+.thema:hover{
+    border:1px solid black;
+    border-radius: 25px;
+    background-color: #236c93;
+    box-shadow: 5px 10px #888888;
+}
+
+
+.thema a{
+    display: block;
+    padding: 0.5rem 1.5rem;
+    color: white;
+    text-decoration: none;
+}
+.themaHeading{
+
+    text-align: center;
+
+}
+.aufgabe{
+    background-color: white;
+}
+.aufgabelast{
+    background-color: white;
+    border-bottom-left-radius: inherit;
+    border-bottom-right-radius: inherit;
+}
+.aufgabe a{
+    color: black;
+}
+.aufgabelast a{
+    color: black;
+}
+
+.aufgabe a:hover{
+    color: grey;
+}
+.aufgabelast a:hover{
+    color: grey;
+}

@@ -1,0 +1,113 @@
+:root {
+    --primary-color: #236c93;
+    --hover-color: #578fac;
+}
+
+body {
+    font-family: Verdana, serif;
+
+}
+
+.nav-inner {
+    flex-wrap: wrap;
+    align-items: center;
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.nav-inner > li:not(:last-child){
+    border-radius: 10px;
+    background-color: var(--primary-color);
+}
+
+.nav-inner li a{
+    display: block;
+    padding: 0.5rem 1.5rem;
+    color: white;
+    text-decoration: none;
+}
+
+.nav-inner > li:not(:last-child):hover{
+    border-radius: 10px;
+    background-color: var(--hover-color);
+}
+
+.logo {
+    width: 50px;
+}
+
+.logo-user {
+    width: 30px;
+    border-radius: 15px;
+    border: 1px solid #578fac;
+}
+
+.logo-user:hover {
+    width: 30px;
+}
+
+.navbar {
+
+    border: 1px solid black;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/**Styling Main*/
+
+.kategorien {
+    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(3,180px);
+    gap: 50px;
+    overflow: visible;
+}
+
+.kategorien > a {
+    position: relative;
+    border-radius: 15px;
+    display: flex;
+    border: 2px solid black;
+    flex-direction: column;
+
+
+    justify-content: center;
+    align-items: center;
+    background: var(--primary-color);
+    height: 180px;
+    text-align: center;
+    transition: box-shadow 1s;
+    box-shadow: 0 0 0 #888888;
+    z-index: 1;
+}
+
+.kategorien > a:hover {
+    background-color: var(--hover-color);
+    box-shadow: 0 5px 10px #888888;
+    outline: 10px solid red;
+}
+
+
+/**Headings and Pictures**/
+h1 {
+    text-align: center;
+    text-decoration: underline;
+}
+
+.fach-picture {
+    width: 100px;
+}
+
+.category-heading {
+    color: white;
+    display: block;
+    padding: 0.5rem 100px;
+    text-decoration: none;
+}
+
+
+
+

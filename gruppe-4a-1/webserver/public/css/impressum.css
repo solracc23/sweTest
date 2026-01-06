@@ -1,0 +1,35 @@
+* {
+    font-size: var(--font-size);
+}
+/* Content Area - rechts und flexibel */
+.content-area {
+    background: var(--surface-color);
+    border-radius: 15px;
+    flex: 1;
+}
+.text{
+color: var(--text-color)
+}
+.content-area h1 {
+    color: #236C93;
+    border-bottom: 2px solid #f0f0f0;
+    margin: 20px;
+    padding-top: 20px;
+}
+
+.content-area h2 {
+    color: #236C93;
+    margin: 20px;
+    padding-top: 20px;
+}
+
+.content-area h3{
+    color: #236C93;
+    margin: 20px;
+    padding-top: 10px;
+}
+.content-area div{
+    background: var(--surface-color);
+    padding: 20px;
+    flex: 1;
+}
