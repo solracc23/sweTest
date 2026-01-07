@@ -27,7 +27,6 @@ jobs:
           format: 'HTML'
           out: 'reports'
           args: >
-              --enableRetireJS
               --enableExperimental
               --prettyPrint
               --noupdate
