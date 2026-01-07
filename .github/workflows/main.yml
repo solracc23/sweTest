@@ -23,10 +23,16 @@ jobs:
         uses: dependency-check/Dependency-Check_Action@main
         with:
           project: 'gruppe-4a-1'
-          path: './gruppe-4a-1/webserver'
+          scan: './gruppe-4a-1/webserver'
           format: 'HTML'
           out: 'reports'
-          args: "--enableExperimental --prettyPrint --noupdate"
+          args: >
+              --enableRetireJS
+              --enableExperimental
+              --prettyPrint
+              --noupdate
+              --exclude **/vendor/**
+              --exclude **/node_modules/**
 
       - name: Upload report
         uses: actions/upload-artifact@v4
