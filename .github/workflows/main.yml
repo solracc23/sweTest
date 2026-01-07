@@ -23,7 +23,7 @@ jobs:
         uses: dependency-check/Dependency-Check_Action@main
         with:
           project: 'gruppe-4a-1'
-          scan: './gruppe-4a-1/webserver'
+          path: './gruppe-4a-1/webserver'
           format: 'HTML'
           out: 'reports'
           args: >
