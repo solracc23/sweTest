@@ -10,6 +10,10 @@ jobs:
     name: Analyse Laravel Code
     runs-on: ubuntu-latest
 
+    defaults:
+      run:
+        working-directory: gruppe-4a-1/webserver
+
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
@@ -19,13 +23,10 @@ jobs:
         with:
           php-version: '8.2'
           extensions: mbstring, xml
-          tools: phpstan, composer
+          tools: composer
 
       - name: Install Dependencies
-        run: composer install --prefer-dist --no-progress --no-suggest
+        run: composer install --prefer-dist --no-progress
 
       - name: Run PHPStan
-        run: vendor/bin/phpstan analyse --level=max app
-defaults:
-  run:
-    working-directory: gruppe-4a-1/webserver
+        run: vendor/bin/phpstan analyse app --level=max
