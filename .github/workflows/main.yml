@@ -1,40 +1,28 @@
-name: OWASP Dependency Check
+name: PHPStan Static Analysis
 
 on:
   push:
     branches: ["main"]
+  pull_request:
 
 jobs:
-  dependency-check:
+  phpstan:
+    name: Analyse Laravel Code
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout Code
+        uses: actions/checkout@v4
 
-      - name: Install Node dependencies
-        working-directory: gruppe-4a-1/webserver
-        run: npm install
-
-      - name: Install PHP dependencies (Laravel)
-        working-directory: gruppe-4a-1/webserver
-        run: composer install --no-interaction --no-progress
-        
-      - name: Run OWASP Dependency-Check
-        uses: dependency-check/Dependency-Check_Action@main
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
         with:
-          project: 'gruppe-4a-1'
-          path: './gruppe-4a-1/webserver'
-          format: 'HTML'
-          out: 'reports'
-          args: >
-              --enableExperimental
-              --prettyPrint
-              --noupdate
-              --exclude **/vendor/**
-              --exclude **/node_modules/**
+          php-version: '8.2'
+          extensions: mbstring, xml
+          tools: phpstan, composer
 
-      - name: Upload report
-        uses: actions/upload-artifact@v4
-        with:
-          name: dependency-check-report
-          path: reports
+      - name: Install Dependencies
+        run: composer install --prefer-dist --no-progress --no-suggest
+
+      - name: Run PHPStan
+        run: vendor/bin/phpstan analyse --level=max app
