@@ -207,7 +207,7 @@ class TaskController extends Controller
             'message' => 'Aufgabe erfolgreich als abgeschlossen markiert!',
         ]);
     }
-}
+
 
     /**
      * Markiert eine Aufgabe als abgeschlossen für den aktuellen Benutzer
